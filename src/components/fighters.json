@@ -1,0 +1,439 @@
+[
+  {
+    "number": "1",
+    "name": "マリオ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "9",
+    "name": "ルイージ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "13",
+    "name": "ピーチ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "13'",
+    "name": "デイジー",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "14",
+    "name": "クッパ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "18",
+    "name": "ドクターマリオ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "48",
+    "name": "ロゼッタ&チコ",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "58",
+    "name": "クッパ Jr.",
+    "series": "スーパーマリオ"
+  },
+  {
+    "number": "2",
+    "name": "ドンキーコング",
+    "series": "ドンキーコング"
+  },
+  {
+    "number": "36",
+    "name": "ディディーコング",
+    "series": "ドンキーコング"
+  },
+  {
+    "number": "67",
+    "name": "キングクルール",
+    "series": "ドンキーコング"
+  },
+  {
+    "number": "3",
+    "name": "リンク",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "16",
+    "name": "シーク",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "17",
+    "name": "ゼルダ",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "22",
+    "name": "こどもリンク",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "23",
+    "name": "ガノンドルフ",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "43",
+    "name": "トゥーンリンク",
+    "series": "ゼルダの伝説"
+  },
+  {
+    "number": "4",
+    "name": "サムス",
+    "series": "メトロイド"
+  },
+  {
+    "number": "4'",
+    "name": "ダークサムス",
+    "series": "メトロイド"
+  },
+  {
+    "number": "29",
+    "name": "ゼロスーツサムス",
+    "series": "メトロイド"
+  },
+  {
+    "number": "65",
+    "name": "リドリー",
+    "series": "メトロイド"
+  },
+  {
+    "number": "5",
+    "name": "ヨッシー",
+    "series": "ヨッシー"
+  },
+  {
+    "number": "6",
+    "name": "カービィ",
+    "series": "星のカービィ"
+  },
+  {
+    "number": "27",
+    "name": "メタナイト",
+    "series": "星のカービィ"
+  },
+  {
+    "number": "39",
+    "name": "デデデ",
+    "series": "星のカービィ"
+  },
+  {
+    "number": "7",
+    "name": "フォックス",
+    "series": "スターフォックス"
+  },
+  {
+    "number": "20",
+    "name": "ファルコ",
+    "series": "スターフォックス"
+  },
+  {
+    "number": "44",
+    "name": "ウルフ",
+    "series": "スターフォックス"
+  },
+  {
+    "number": "8",
+    "name": "ピカチュー",
+    "series": "ポケモン"
+  },
+  {
+    "number": "12",
+    "name": "プリン",
+    "series": "ポケモン"
+  },
+  {
+    "number": "19",
+    "name": "ピチュー",
+    "series": "ポケモン"
+  },
+  {
+    "number": "24",
+    "name": "ミュウツー",
+    "series": "ポケモン"
+  },
+  {
+    "number": "33",
+    "name": "ポケモントレーナー",
+    "series": "ポケモン"
+  },
+  {
+    "number": "41",
+    "name": "ルカリオ",
+    "series": "ポケモン"
+  },
+  {
+    "number": "50",
+    "name": "ゲッコウガ",
+    "series": "ポケモン"
+  },
+  {
+    "number": "69",
+    "name": "ガオガエン",
+    "series": "ポケモン"
+  },
+  {
+    "number": "10",
+    "name": "ネス",
+    "series": "MOTHER"
+  },
+  {
+    "number": "37",
+    "name": "リュカ",
+    "series": "MOTHER"
+  },
+  {
+    "number": "11",
+    "name": "キャプテン・ファルコン",
+    "series": "F-ZERO"
+  },
+  {
+    "number": "15",
+    "name": "アイスクライマー",
+    "series": "アイスクライマー"
+  },
+  {
+    "number": "21",
+    "name": "マルス",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "21'",
+    "name": "ルキナ",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "25",
+    "name": "ロイ",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "25'",
+    "name": "クロム",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "32",
+    "name": "アイク",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "56",
+    "name": "ルフレ",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "62",
+    "name": "カムイ",
+    "series": "ファイアーエムブレム"
+  },
+  {
+    "number": "26",
+    "name": "Mr.ゲーム&ウォッチ",
+    "series": "GAME & WATCH"
+  },
+  {
+    "number": "28",
+    "name": "ピット",
+    "series": "パルテナの鏡"
+  },
+  {
+    "number": "28'",
+    "name": "ブラックピット",
+    "series": "パルテナの鏡"
+  },
+  {
+    "number": "54",
+    "name": "パルテナ",
+    "series": "パルテナの鏡"
+  },
+  {
+    "number": "30",
+    "name": "ワリオ",
+    "series": "メイド・イン・ワリオ"
+  },
+  {
+    "number": "31",
+    "name": "スネーク",
+    "series": "メタルギアソリッド"
+  },
+  {
+    "number": "38",
+    "name": "ソニック",
+    "series": "ソニック"
+  },
+  {
+    "number": "40",
+    "name": "ピクミン&オリマー",
+    "series": "ピクミン"
+  },
+  {
+    "number": "42",
+    "name": "ロボット",
+    "series": "FAMILY COMPUTER ROBOT"
+  },
+  {
+    "number": "45",
+    "name": "むらびと",
+    "series": "どうぶつの森"
+  },
+  {
+    "number": "46",
+    "name": "ロックマン",
+    "series": "ロックマン"
+  },
+  {
+    "number": "47",
+    "name": "Wii Fit トレーナー",
+    "series": "Wii Fit"
+  },
+  {
+    "number": "49",
+    "name": "リトル・マック",
+    "series": "パンチアウト"
+  },
+  {
+    "number": "51",
+    "name": "Miiファイター 格闘タイプ",
+    "series": "Mii"
+  },
+  {
+    "number": "52",
+    "name": "Miiファイター 剣術タイプ",
+    "series": "Mii"
+  },
+  {
+    "number": "53",
+    "name": "Miiファイター 射撃タイプ",
+    "series": "Mii"
+  },
+  {
+    "number": "55",
+    "name": "パックマン",
+    "series": "パックマン"
+  },
+  {
+    "number": "57",
+    "name": "シュルク",
+    "series": "ゼノブレイド"
+  },
+  {
+    "number": "59",
+    "name": "ダックハント",
+    "series": "ダックハント"
+  },
+  {
+    "number": "60",
+    "name": "リュウ",
+    "series": "ストリートファイター"
+  },
+  {
+    "number": "60'",
+    "name": "ケン",
+    "series": "ストリートファイター"
+  },
+  {
+    "number": "61",
+    "name": "クラウド",
+    "series": "ファイナルファンタジー"
+  },
+  {
+    "number": "63",
+    "name": "ベヨネッタ",
+    "series": "ベヨネッタ"
+  },
+  {
+    "number": "64",
+    "name": "インクリング",
+    "series": "スプラトゥーン"
+  },
+  {
+    "number": "66",
+    "name": "シモン",
+    "series": "悪魔城ドラキュラ"
+  },
+  {
+    "number": "66'",
+    "name": "リヒター",
+    "series": "悪魔城ドラキュラ"
+  },
+  {
+    "number": "70",
+    "name": "パックンフラワー",
+    "series": "スーパーマリオ",
+    "dlc": true
+  },
+  {
+    "number": "71",
+    "name": "ジョーカー",
+    "series": "ペルソナ",
+    "dlc": true
+  },
+  {
+    "number": "72",
+    "name": "勇者",
+    "series": "ドラゴンクエスト",
+    "dlc": true
+  },
+  {
+    "number": "73",
+    "name": "バンジョー&カズーイ",
+    "series": "バンジョーとカズーイの大冒険",
+    "dlc": true
+  },
+  {
+    "number": "74",
+    "name": "テリー",
+    "series": "餓狼伝説",
+    "dlc": true
+  },
+  {
+    "number": "75",
+    "name": "ベレト",
+    "series": "ファイアーエムブレム",
+    "dlc": true
+  },
+  {
+    "number": "76",
+    "name": "ミェンミェン",
+    "series": "ARMS",
+    "dlc": true
+  },
+  {
+    "number": "77",
+    "name": "スティーブ",
+    "series": "マインクラフト",
+    "dlc": true
+  },
+  {
+    "number": "78",
+    "name": "セフィロス",
+    "series": "ファイナルファンタジー",
+    "dlc": true
+  },
+  {
+    "number": "79",
+    "name": "ホムラ/ヒカリ",
+    "series": "ゼノブレイド",
+    "dlc": true
+  },
+  {
+    "number": "81",
+    "name": "カズヤ",
+    "series": "鉄拳",
+    "dlc": true
+  },
+  {
+    "number": "82",
+    "name": "ソラ",
+    "series": "キングダムハーツ",
+    "dlc": true
+  }
+]
