@@ -3,4 +3,5 @@ export type Fighter = {
   name: string
   series: string
   dlc?: boolean
+  enabled: boolean
 }

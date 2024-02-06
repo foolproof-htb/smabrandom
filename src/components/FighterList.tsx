@@ -1,20 +1,24 @@
-import { useEffect, useState } from 'react'
+import { FC } from 'react'
 import { FighterCard } from './FighterCard'
-import json from './fighters.json'
-import { Fighter } from '~/types'
+import { Row } from 'antd'
+import { FightersProvider, useFighters } from '~/contexts'
 
-export const FighterList = () => {
-  const [fighters, setFighters] = useState<Fighter[]>([])
+export const FighterList: FC = () => {
+  return (
+    <FightersProvider>
+      <Body />
+    </FightersProvider>
+  )
+}
 
-  useEffect(() => {
-    setFighters(json)
-  })
+const Body: FC = () => {
+  const { fighters } = useFighters()
 
   return (
-    <div style={{ display: 'flex' }}>
+    <Row>
       {fighters.map((fighter) => (
         <FighterCard key={fighter.number} fighter={fighter} />
       ))}
-    </div>
+    </Row>
   )
 }
