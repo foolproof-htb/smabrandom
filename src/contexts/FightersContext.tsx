@@ -4,15 +4,15 @@ import json from './fighters.json'
 
 type ContextType = {
   fighters: Fighter[]
-  toggleFighter: (number: string) => void
+  toggleFighterEnabled: (number: string) => void
 }
 
 const FightersContext = createContext<ContextType>({
   fighters: [],
-  toggleFighter: () => {},
+  toggleFighterEnabled: () => {},
 })
 
-export const useFighters = () => {
+export const useFightersContext = () => {
   return useContext(FightersContext)
 }
 
@@ -27,7 +27,7 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     return { ...fighter, enabled: !fighter.enabled }
   }
 
-  const toggleFighter = (number: string) => {
+  const toggleFighterEnabled = (number: string) => {
     const updatedFighters = fighters.map((fighter) =>
       updateFighter(fighter, number)
     )
@@ -35,7 +35,7 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setFighters(updatedFighters)
   }
 
-  const value = { fighters, toggleFighter }
+  const value = { fighters, toggleFighterEnabled }
 
   return (
     <FightersContext.Provider value={value}>
