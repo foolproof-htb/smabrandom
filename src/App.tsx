@@ -1,5 +1,5 @@
 import { Layout } from 'antd'
-import { FighterList } from './components'
+import { ContentBody, FighterList } from './components'
 
 const { Header, Content, Footer } = Layout
 
@@ -10,6 +10,7 @@ function App() {
       <Content
         style={{ padding: '50px', margin: '20px', backgroundColor: 'white' }}
       >
+        <ContentBody />
         <FighterList />
       </Content>
       <Footer>フッター</Footer>
