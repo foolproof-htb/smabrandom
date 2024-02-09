@@ -5,11 +5,15 @@ import json from './fighters.json'
 type ContextType = {
   fighters: Fighter[]
   toggleFighterEnabled: (number: string) => void
+  selectAll: () => void
+  deselectAll: () => void
 }
 
 const FightersContext = createContext<ContextType>({
   fighters: [],
   toggleFighterEnabled: () => {},
+  selectAll: () => {},
+  deselectAll: () => {},
 })
 
 export const useFightersContext = () => {
@@ -35,7 +39,15 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setFighters(updatedFighters)
   }
 
-  const value = { fighters, toggleFighterEnabled }
+  const selectAll = () => {
+    setFighters((current) => current.map((f) => ({ ...f, enabled: true })))
+  }
+
+  const deselectAll = () => {
+    setFighters((current) => current.map((f) => ({ ...f, enabled: false })))
+  }
+
+  const value = { fighters, toggleFighterEnabled, selectAll, deselectAll }
 
   return (
     <FightersContext.Provider value={value}>
