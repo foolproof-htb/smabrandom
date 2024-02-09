@@ -2,7 +2,7 @@ import { Button } from 'antd'
 import { useState } from 'react'
 import { useFightersContext } from '~/contexts'
 import { Fighter } from '~/types'
-import { sample } from 'lodash/'
+import { sample } from 'lodash'
 
 export const RandomFighterPanel = () => {
   const { fighters } = useFightersContext()

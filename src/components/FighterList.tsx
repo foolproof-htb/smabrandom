@@ -1,10 +1,16 @@
-import { FC } from 'react'
-import { FighterCard } from './FighterCard'
-import { Button, Flex, Row } from 'antd'
+import { FC, useState } from 'react'
+import { Button, Flex, Switch } from 'antd'
 import { useFightersContext } from '~/contexts'
+import { GroupedList } from './GroupedList'
+import { DefaultList } from './DefaultList'
 
 export const FighterList: FC = () => {
-  const { fighters, selectAll, deselectAll } = useFightersContext()
+  const { selectAll, deselectAll } = useFightersContext()
+  const [isGrouped, setIsGrouped] = useState<boolean>(false)
+
+  const onChangeArrangement = (checked: boolean) => {
+    setIsGrouped(checked)
+  }
 
   return (
     <>
@@ -12,11 +18,15 @@ export const FighterList: FC = () => {
         <Button onClick={selectAll}>全選択</Button>
         <Button onClick={deselectAll}>全解除</Button>
       </Flex>
-      <Row>
-        {fighters.map((fighter) => (
-          <FighterCard key={fighter.number} fighter={fighter} />
-        ))}
-      </Row>
+      <Flex>
+        <p>シリーズ別表示</p>
+        <Switch
+          checkedChildren="シリーズ別"
+          unCheckedChildren="番号順"
+          onChange={onChangeArrangement}
+        />
+      </Flex>
+      {isGrouped ? <GroupedList /> : <DefaultList />}
     </>
   )
 }
