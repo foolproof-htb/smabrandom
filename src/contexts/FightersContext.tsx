@@ -7,6 +7,7 @@ type ContextType = {
   toggleFighterEnabled: (number: string) => void
   selectAll: () => void
   deselectAll: () => void
+  deselectDlc: () => void
 }
 
 const FightersContext = createContext<ContextType>({
@@ -14,6 +15,7 @@ const FightersContext = createContext<ContextType>({
   toggleFighterEnabled: () => {},
   selectAll: () => {},
   deselectAll: () => {},
+  deselectDlc: () => {},
 })
 
 export const useFightersContext = () => {
@@ -47,7 +49,19 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setFighters((current) => current.map((f) => ({ ...f, enabled: false })))
   }
 
-  const value = { fighters, toggleFighterEnabled, selectAll, deselectAll }
+  const deselectDlc = () => {
+    setFighters((current) =>
+      current.map((f) => (f.dlc ? { ...f, enabled: false } : f))
+    )
+  }
+
+  const value = {
+    fighters,
+    toggleFighterEnabled,
+    selectAll,
+    deselectAll,
+    deselectDlc,
+  }
 
   return (
     <FightersContext.Provider value={value}>
