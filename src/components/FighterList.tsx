@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Button, Flex, Switch } from 'antd'
+import { Button, Flex, Row, Switch } from 'antd'
 import { useFightersContext } from '~/contexts'
 import { GroupedList } from './GroupedList'
 import { DefaultList } from './DefaultList'
@@ -14,11 +14,11 @@ export const FighterList: FC = () => {
 
   return (
     <>
-      <Flex>
+      <Row>
         <Button onClick={selectAll}>全ファイター有効化</Button>
         <Button onClick={deselectAll}>全ファイター無効化</Button>
         <Button onClick={deselectDlc}>DLCファイターを無効化</Button>
-      </Flex>
+      </Row>
       <Flex>
         <p>シリーズ別表示</p>
         <Switch

@@ -1,16 +1,16 @@
-import { Row } from 'antd'
+import { List } from 'antd'
 import { FC } from 'react'
-import { FighterCard } from './FighterCard'
+import { FighterItem } from './FighterItem'
 import { useFightersContext } from '~/contexts'
 
 export const DefaultList: FC = () => {
   const { fighters } = useFightersContext()
 
   return (
-    <Row>
-      {fighters.map((fighter) => (
-        <FighterCard key={fighter.number} fighter={fighter} />
-      ))}
-    </Row>
+    <List
+      bordered
+      dataSource={fighters}
+      renderItem={(item) => <FighterItem key={item.number} fighter={item} />}
+    />
   )
 }
