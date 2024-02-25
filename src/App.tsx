@@ -8,7 +8,7 @@ function App() {
     <Layout>
       <Header>ヘッダー</Header>
       <Content
-        style={{ padding: '50px', margin: '20px', backgroundColor: 'white' }}
+        style={{ padding: '12px', margin: '12px', backgroundColor: 'white' }}
       >
         <ContentBody />
       </Content>
