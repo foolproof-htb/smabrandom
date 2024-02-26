@@ -16,7 +16,7 @@ export const FighterList: FC = () => {
       <div style={{ margin: '8px 0' }}>
         <SwitchFighterOptions />
       </div>
-      <Flex>
+      <Flex style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <p>シリーズ別表示</p>
         <Switch
           checkedChildren="シリーズ別"
