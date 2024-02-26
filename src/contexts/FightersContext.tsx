@@ -5,17 +5,17 @@ import json from './fighters.json'
 type ContextType = {
   fighters: Fighter[]
   toggleFighterEnabled: (number: string) => void
-  selectAll: () => void
-  deselectAll: () => void
-  deselectDlc: () => void
+  switchAllEnableStatus: (type: SwitchType, status: boolean) => void
+  checkAllEnabledStatus: (type: SwitchType, shouldBeEnabled: boolean) => boolean
 }
+
+type SwitchType = 'all' | 'dlc' | 'mii'
 
 const FightersContext = createContext<ContextType>({
   fighters: [],
   toggleFighterEnabled: () => {},
-  selectAll: () => {},
-  deselectAll: () => {},
-  deselectDlc: () => {},
+  switchAllEnableStatus: () => {},
+  checkAllEnabledStatus: () => true,
 })
 
 export const useFightersContext = () => {
@@ -41,26 +41,40 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setFighters(updatedFighters)
   }
 
-  const selectAll = () => {
-    setFighters((current) => current.map((f) => ({ ...f, enabled: true })))
+  const switchAllEnableStatus = (type: SwitchType, status: boolean) => {
+    if (type === 'dlc') {
+      setFighters((current) =>
+        current.map((f) => (f.dlc ? { ...f, enabled: status } : f))
+      )
+    } else if (type === 'mii') {
+      setFighters((current) =>
+        current.map((f) => (f.series === 'Mii' ? { ...f, enabled: status } : f))
+      )
+    } else {
+      setFighters((current) => current.map((f) => ({ ...f, enabled: status })))
+    }
   }
 
-  const deselectAll = () => {
-    setFighters((current) => current.map((f) => ({ ...f, enabled: false })))
+  const filteredFighters = (type: SwitchType) => {
+    return fighters.filter((f) => {
+      if (type === 'dlc') return f.dlc
+      if (type === 'mii') return f.series === 'Mii'
+      return true
+    })
   }
 
-  const deselectDlc = () => {
-    setFighters((current) =>
-      current.map((f) => (f.dlc ? { ...f, enabled: false } : f))
-    )
+  const checkAllEnabledStatus = (
+    type: SwitchType,
+    shouldBeEnabled: boolean
+  ) => {
+    return filteredFighters(type).every((f) => f.enabled === shouldBeEnabled)
   }
 
   const value = {
     fighters,
+    checkAllEnabledStatus,
     toggleFighterEnabled,
-    selectAll,
-    deselectAll,
-    deselectDlc,
+    switchAllEnableStatus,
   }
 
   return (
