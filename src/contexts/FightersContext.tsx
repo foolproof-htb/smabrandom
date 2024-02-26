@@ -1,6 +1,14 @@
-import { FC, ReactNode, createContext, useContext, useState } from 'react'
+import {
+  FC,
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { Fighter } from '~/types'
 import json from './fighters.json'
+import { useCookies } from 'react-cookie'
 
 type ContextType = {
   fighters: Fighter[]
@@ -27,9 +35,30 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
     json.map((item) => ({ ...item, enabled: true }))
   )
 
+  const [cookies, setCookie] = useCookies()
+
+  useEffect(() => {
+    const enabledMap = cookies['enabledMap']
+    if (enabledMap) {
+      setFighters((current) =>
+        current.map((f) => ({ ...f, enabled: enabledMap[f.number] }))
+      )
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const setEnabledCookie = (numbers: string[], enabled: boolean) => {
+    const enabledMap = cookies['enabledMap'] || {}
+    numbers.forEach((number) => {
+      enabledMap[number] = enabled
+    })
+    setCookie('enabledMap', enabledMap, { maxAge: 3600 * 24 * 365 })
+  }
+
   const updateFighter = (fighter: Fighter, number: string) => {
     if (fighter.number !== number) return fighter
 
+    setEnabledCookie([number], !fighter.enabled)
     return { ...fighter, enabled: !fighter.enabled }
   }
 
@@ -43,15 +72,33 @@ export const FightersProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const switchAllEnableStatus = (type: SwitchType, status: boolean) => {
     if (type === 'dlc') {
-      setFighters((current) =>
-        current.map((f) => (f.dlc ? { ...f, enabled: status } : f))
-      )
+      const dlcFighterNumbers: string[] = []
+      const dlcFighters = fighters.map((f) => {
+        if (!f.dlc) return f
+
+        dlcFighterNumbers.push(f.number)
+        return { ...f, enabled: status }
+      })
+
+      setEnabledCookie(dlcFighterNumbers, status)
+      setFighters(dlcFighters)
     } else if (type === 'mii') {
-      setFighters((current) =>
-        current.map((f) => (f.series === 'Mii' ? { ...f, enabled: status } : f))
-      )
+      const miiFighterNumbers: string[] = []
+      const miiFighters = fighters.map((f) => {
+        if (f.series !== 'Mii') return f
+
+        miiFighterNumbers.push(f.number)
+        return { ...f, enabled: status }
+      })
+
+      setEnabledCookie(miiFighterNumbers, status)
+      setFighters(miiFighters)
     } else {
-      setFighters((current) => current.map((f) => ({ ...f, enabled: status })))
+      const updatedFighters = fighters.map((f) => ({ ...f, enabled: status }))
+      const fighterNumbers = updatedFighters.map((f) => f.number)
+
+      setEnabledCookie(fighterNumbers, status)
+      setFighters(updatedFighters)
     }
   }
 
