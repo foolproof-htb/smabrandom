@@ -24,6 +24,11 @@ export const FighterList: FC = () => {
           onChange={onChangeArrangement}
         />
       </Flex>
+      <div style={{ margin: '8px' }}>
+        ファイターをタップすると選択・解除。
+        <br />
+        選択されたファイター（白背景）だけランダムの候補になります。
+      </div>
       {isGrouped ? <GroupedList /> : <DefaultList />}
     </>
   )
